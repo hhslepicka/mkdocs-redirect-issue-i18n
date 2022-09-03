@@ -1,0 +1,46 @@
+site_name: Issue Demo for MkDocs Redirects
+
+extra:
+  alternate:
+    - name: English
+      link: ./en/
+      lang: en
+      site_name: Issue Demonstration
+    - name: Português
+      link: ./pt/
+      lang: pt
+      site_name: Demonstração do Problema
+
+nav:
+  - Home: index.en.md
+  - new.en.md
+
+theme:
+  name: material
+  palette:
+    primary: black
+    accent: deep orange
+  language: en
+  features:
+    - tabs
+    - navigation.top
+    - navigation.tabs
+    - navigation.indexes
+
+plugins:
+  - search
+  - i18n:
+      default_language: en
+      # to speed up development build uncomment the line below
+      # default_language_only: true
+      languages:
+        en: English
+        pt: Portuguese
+      material_alternate: true
+      nav_translations:
+        pt:
+          Home: Início
+  - redirects:
+      redirect_maps:
+        "old.en.md": "new.en.md"
+        "old.pt.md": "new.pt.md"
